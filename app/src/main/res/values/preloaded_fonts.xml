@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/akronim</item>
+        <item>@font/diplomata</item>
+        <item>@font/luckiest_guy</item>
+        <item>@font/metal_mania</item>
+        <item>@font/monofett</item>
+        <item>@font/monoton</item>
+        <item>@font/mr_bedfort</item>
+        <item>@font/mr_dafoe</item>
+        <item>@font/mrs_saint_delafield</item>
+        <item>@font/mrs_sheppards</item>
+    </array>
+</resources>

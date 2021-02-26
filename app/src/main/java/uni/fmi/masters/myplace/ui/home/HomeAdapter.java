@@ -31,14 +31,14 @@ public class HomeAdapter extends ArrayAdapter<Comment> {
 
         TextView ratingV = convertView.findViewById(R.id.ratingView);
         TextView commentV = convertView.findViewById(R.id.commentView);
-        TextView nameuserV = convertView.findViewById(R.id.nameuserView);
-        TextView nameplaceV = convertView.findViewById(R.id.nameplaceView);
+        //TextView nameuserV = convertView.findViewById(R.id.nameuserView);
+        //TextView nameplaceV = convertView.findViewById(R.id.nameplaceView);
 
 
         ratingV.setText(String.valueOf(getItem(position).getRating()));
         commentV.setText(getItem(position).getComment());
-        nameuserV.setText(String.valueOf(getItem(position).getUserID()));
-        nameplaceV.setText(String.valueOf(getItem(position).getPlaceID()));
+        //nameuserV.setText(String.valueOf(getItem(position).getUserID()));
+        //nameplaceV.setText(String.valueOf(getItem(position).getPlaceID()));
 
         return convertView;
     }

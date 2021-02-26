@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     };
-    //Създаване на дръзка със сървъра
+    // Асинхронна задача
     private class LoginAT extends AsyncTask<Void, Void, Void>{
 
         String username;

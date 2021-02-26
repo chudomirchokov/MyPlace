@@ -57,7 +57,7 @@ RegisterActivity extends AppCompatActivity {
 
 
     }
-    //
+    // OnClick на бутоните
     View.OnClickListener onClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -84,7 +84,7 @@ RegisterActivity extends AppCompatActivity {
 
                 }else{
                     Toast.makeText(RegisterActivity.this,
-                            "Please provide all the necessary information!", Toast.LENGTH_SHORT).show();
+                            "Please insert all information!", Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
@@ -93,7 +93,7 @@ RegisterActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
-
+    // Асинхронна задача
     private  class RegisterAT extends AsyncTask<Void, Void, Void>{
 
         User user;
@@ -110,6 +110,7 @@ RegisterActivity extends AppCompatActivity {
             dialog.setTitle("Registration in progress....");
             dialog.show();
         }
+
         //Създаване на конекцията
         @Override
         protected Void doInBackground(Void... voids) {

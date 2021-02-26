@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         entryTV = findViewById(R.id.welcomeTextView);
         entryTV.setOnClickListener(onClick);
     }
+
+    // За клик върху текста и извеждане на Login
     View.OnClickListener onClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

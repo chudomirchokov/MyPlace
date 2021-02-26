@@ -31,7 +31,7 @@ public class LogoutFragment extends Fragment {
 
         logoutB = root.findViewById(R.id.logoutButton);
 
-
+        // Да препраща към Main при клик на ОК
         logoutB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View root) {

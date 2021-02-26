@@ -47,6 +47,7 @@ public class HomeFragment extends Fragment {
     FloatingActionButton addCB;
     Dialog addDialog;
 
+    //OnClick при въвеждане на коментарите
     private View.OnClickListener onClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -59,6 +60,7 @@ public class HomeFragment extends Fragment {
             Button addCB = addDialog.findViewById(R.id.addCommentButton);
             Button cancelCB = addDialog.findViewById(R.id.cancelAdd);
 
+            //OnClick на бутона Cancel
             cancelCB.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -66,6 +68,7 @@ public class HomeFragment extends Fragment {
                 }
             });
 
+            //Onclick бутона ОК и зареждане на нова нишка за Добавяне на коментара
             addCB.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     Button loginB;
     Button registerB;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
                 String usernameInput = usernameET.getText().toString();
                 String passwordInput = passwordET.getText().toString();
                 new LoginAT(usernameInput,passwordInput).execute();
-
 
             }else{
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
@@ -89,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             String urlString = String.format("http://192.168.0.104:8585/Login?username=%s&password=%s",
                     username, password);
+
             //Създаване на конекцията
             HttpURLConnection urlConnection = null;
             try {

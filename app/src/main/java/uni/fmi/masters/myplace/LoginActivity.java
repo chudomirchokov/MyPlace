@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
         String username;
         String password;
-        int loggedUserID = 0;
+        int loggedUserID = -1;
 
         ProgressDialog dialog;
 
@@ -125,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
             dialog.hide();
 
-            if(loggedUserID != 0){
+            if(loggedUserID != -1){
                 Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                 intent.putExtra("userID", loggedUserID);
                 startActivity(intent);

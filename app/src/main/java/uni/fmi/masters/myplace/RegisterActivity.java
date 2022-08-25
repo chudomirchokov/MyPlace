@@ -1,21 +1,14 @@
 package uni.fmi.masters.myplace;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.io.BufferedInputStream;
@@ -97,7 +90,7 @@ RegisterActivity extends AppCompatActivity {
     private  class RegisterAT extends AsyncTask<Void, Void, Void>{
 
         User user;
-        boolean isSucccess = false;
+        boolean isSuccess = false;
 
         ProgressDialog dialog;
         RegisterAT(User user){
@@ -131,7 +124,7 @@ RegisterActivity extends AppCompatActivity {
 
                 if(result != null){
                     if(result.contains("true")){
-                        isSucccess = true;
+                        isSuccess = true;
                     }
                 }
 
@@ -151,7 +144,7 @@ RegisterActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
 
             dialog.hide();
-            if (isSucccess){
+            if (isSuccess){
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
             }else {

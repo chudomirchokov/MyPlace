@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="524dp"
         android:gravity="center"
-        android:text="TO ENTER CLICK HERE!!"
+        android:text="TO ENTER CLICK TEXT!!"
         android:textColor="#2FFF00"
         android:textSize="30sp"
         android:visibility="visible"

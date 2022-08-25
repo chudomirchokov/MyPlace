@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         welcome = findViewById(R.id.welcome);
         entryTV = findViewById(R.id.welcomeTextView);
         entryTV.setOnClickListener(onClick);
+
     }
 
     // За клик върху текста и извеждане на Login

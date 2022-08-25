@@ -2,122 +2,56 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentCategory"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/holiday3">
-    tools:context=".ui.category.CategoryFragment">
-
-    <TextView
-        android:id="@+id/text_category"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/categoryButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/diplomata"
+        android:text="category"
+        android:textColor="#D9FF03"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/placeButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/hotelsButton"
+        android:id="@+id/placeButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/diplomata"
-        android:text="HOTELS"
+        android:text="Place"
         android:textColor="#D9FF03"
-        app:layout_constraintBottom_toTopOf="@+id/restaurantButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/restaurantButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/diplomata"
-        android:text="restaurant"
-        android:textColor="#D9FF03"
-        app:layout_constraintBottom_toTopOf="@+id/coffeeButton"
+        android:visibility="visible"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/allComentInOne"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hotelsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/categoryButton" />
 
     <Button
-        android:id="@+id/coffeeButton"
+        android:id="@+id/allComentInOne"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
         android:fontFamily="@font/diplomata"
-        android:text="coffee"
+        android:text="ALL COMMENTS"
         android:textColor="#D9FF03"
-        app:layout_constraintBottom_toTopOf="@+id/barButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restaurantButton" />
-
-    <Button
-        android:id="@+id/barButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/diplomata"
-        android:text="BAR"
-        android:textColor="#D9FF03"
-        app:layout_constraintBottom_toTopOf="@+id/fastfoodButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coffeeButton" />
-
-    <Button
-        android:id="@+id/fastfoodButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/diplomata"
-        android:text="Fast food"
-        android:textColor="#D9FF03"
-        app:layout_constraintBottom_toTopOf="@+id/cinemaButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barButton" />
-
-    <Button
-        android:id="@+id/cinemaButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/diplomata"
-        android:text="cinema"
-        android:textColor="#D9FF03"
-        app:layout_constraintBottom_toTopOf="@+id/gasstationButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fastfoodButton" />
-
-    <Button
-        android:id="@+id/gasstationButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/diplomata"
-        android:text="gas station"
-        android:textColor="#D9FF03"
+        android:visibility="visible"
+        app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cinemaButton" />
+        app:layout_constraintTop_toBottomOf="@+id/placeButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

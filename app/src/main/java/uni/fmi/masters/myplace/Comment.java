@@ -7,6 +7,7 @@ public class Comment {
     private int rating;
     private String comment;
 
+
     public Comment(int userID, int placeID, int rating, String comment) {
         this.userID = userID;
         this.placeID = placeID;

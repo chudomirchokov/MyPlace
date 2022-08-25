@@ -1,12 +1,22 @@
 package uni.fmi.masters.myplace;
 
-public class User {
+public class User extends android.app.Application {
     private int id;
     private String username;
     private String password;
     private String firstName;
     private String lastName;
     private Boolean isAdmin;
+
+    public User(int id, String username, String password, String firstName, String lastName) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public User(){}
 
     public Boolean getAdmin() {
         return isAdmin;

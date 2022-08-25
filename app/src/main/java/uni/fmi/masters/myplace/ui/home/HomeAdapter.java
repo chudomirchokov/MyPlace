@@ -26,17 +26,17 @@ public class HomeAdapter extends ArrayAdapter<Comment> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if(convertView == null){
             LayoutInflater inflater = ((MenuActivity)getContext()).getLayoutInflater();
-            convertView = inflater.inflate(R.layout.comment_list, parent, false);
+            //convertView = inflater.inflate(R.layout.comment_list, parent, false);
         }
 
-        TextView ratingV = convertView.findViewById(R.id.ratingView);
-        TextView commentV = convertView.findViewById(R.id.commentView);
+        //TextView ratingV = convertView.findViewById(R.id.ratingView);
+        //TextView commentV = convertView.findViewById(R.id.commentView);
         //TextView nameuserV = convertView.findViewById(R.id.nameuserView);
         //TextView nameplaceV = convertView.findViewById(R.id.nameplaceView);
 
 
-        ratingV.setText(String.valueOf(getItem(position).getRating()));
-        commentV.setText(getItem(position).getComment());
+        //ratingV.setText(String.valueOf(getItem(position).getRating()));
+        //commentV.setText(getItem(position).getComment());
         //nameuserV.setText(String.valueOf(getItem(position).getUserID()));
         //nameplaceV.setText(String.valueOf(getItem(position).getPlaceID()));
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="670dp"
+    tools:context="uni.fmi.masters.myplace.MapsActivity"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:id="@+id/TF_location"
+        android:layout_width="293dp"
+        android:layout_height="64dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/B_search"
+        android:layout_width="114dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="1dp"
+        android:onClick="onClickSearch"
+        android:text="search" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="322dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="1dp"
+        android:onClick="onBackClick"
+        android:text="Back" />
+
+</RelativeLayout>

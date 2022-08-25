@@ -1,0 +1,218 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyPlaceResful
+
+{
+    public class MyPlace : IMyPlace
+    {
+        public int AddComment(string comment, int rating, int userID, int id, int placeID)//, int placeID)
+        {
+            using (var db = new MyProjectDBEntities())                
+            {
+                
+                CommentList comm = new CommentList();
+                comm.Comment = comment;
+                comm.Rating = rating;
+                comm.UserID = userID;
+                comm.PlaceID = placeID;
+
+
+                db.CommentList.Add(comm);
+                db.SaveChanges();                        
+
+                return comm.Id;
+            }
+        }
+
+        public List<Simple.CommentList> GetAllComments()
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                var comments = db.CommentList.Select(c => new Simple.CommentList
+                {
+                    
+                    ID = c.Id,
+                    Comment = c.Comment,
+                    Rating = (int)c.Rating,
+                    UserID = (int)c.UserID,
+                    PlaceID = (int)c.PlaceID
+
+                }).ToList();
+                
+
+                return comments;
+            }
+        }
+
+        public int AddCategory(int id, string name)//, string iconPath)
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                Category cat = new Category();
+                //cat.Id = id;
+
+                cat.name = name;
+                //cat.IconPath = iconPath;
+
+                db.Category.Add(cat);
+                db.SaveChanges();
+                return cat.Id;
+            }
+        }
+
+        public List<Simple.Category> GetAllCategory()
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                var category = db.Category.Select(cat => new Simple.Category
+                {
+                    Id = cat.Id,
+                    Name = cat.name,
+                    //IconPath = cat.IconPath
+
+                }).ToList();
+                return category;
+            }
+        }
+
+        public int AddPlace(int id, string name, string address, string phone, int categoryID)//, string imagePath)//, int categoryID)
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                Place place = new Place();
+                place.Name = name;
+                place.Address = address;
+                place.Phone = phone;
+                //place.ImageParh = imagePath;
+                place.CategoryID = categoryID;
+
+                db.Place.Add(place);
+                db.SaveChanges();
+                return place.Id;
+            }
+        }
+
+        public List<Simple.Place> GetAllPlace()
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                var places = db.Place.Select(p => new Simple.Place
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Address = p.Address,
+                    Phone = p.Phone,
+                    ImagePath = p.ImageParh,
+                    CategoryID = p.CategoryID,
+
+                }).ToList();
+                return places;
+            }
+        }
+
+        /*public bool DeleteComment(int id )
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                var comment = db.CommentList.FirstOrDefault(c => c.Id == id);
+                if (comment != null)
+                {
+                    db.CommentList.Remove(comment);
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }*/
+
+        public Simple.User GetUsersName(int id)
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                var usersIDFromList = db.User.FirstOrDefault(u => u.Id == id);//new Simple.User
+                if (usersIDFromList != null)
+                {
+                    Simple.User simpleU = new Simple.User();
+                    simpleU.Username = usersIDFromList.Username;
+                    simpleU.ID = usersIDFromList.Id;
+
+                    return simpleU;
+
+                }
+
+                return null;
+            }
+        }
+       
+        public List<Simple.User> GetAllUsers()
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                var users = db.User.Select(u => new Simple.User
+                {
+                    ID = u.Id,
+                    Username = u.Username,
+                    Fname = u.Fname,
+                    Lname = u.Lname,
+
+
+                }).ToList();
+
+                return users;
+            }
+        }        
+
+        public Simple.User Login(string username, string password)
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                var user = db.User.FirstOrDefault(u => u.Username == username
+                    && u.Password == password);
+                if (user != null)
+                {
+                    Simple.User sUser = new Simple.User();
+                    sUser.Username = user.Username;
+                    sUser.ID = user.Id;
+                    sUser.Fname = user.Fname;
+                    sUser.Lname = user.Lname;
+
+                    return sUser;
+                }
+                return null;
+            }
+        }
+
+        public bool RegisterUser(string username, string password, string fname, string lname)
+        {
+            using (var db = new MyProjectDBEntities())
+            {
+                User user = new User();
+
+                user.Username = username;
+                user.Password = password;
+                user.Fname = fname;
+                user.Lname = lname;
+
+                try
+                {
+                    db.User.Add(user);
+                    db.SaveChanges();
+
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return false;
+            }
+        }        
+    }
+}

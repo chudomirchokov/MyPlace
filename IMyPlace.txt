@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyPlaceResful
+{
+    [ServiceContract]
+    interface IMyPlace
+    {
+        [OperationContract]
+        [WebGet(
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = @"Login?username={username}&password={password}")]
+        Simple.User Login(string username, string password);
+
+        [OperationContract]
+        [WebGet(
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = @"RegisterUser?username={username}&password={password}&fname={fname}&lname={lname}")]
+        bool RegisterUser(string username, string password, string fname, string lname);
+
+        [OperationContract]
+        [WebGet(
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,           
+            UriTemplate = @"AddComment?comment={comment}&rating={rating}&userID={userID}&id={id}&placeID={placeID}")]        
+        int AddComment(string comment, int rating, int userID, int id, int placeID);
+
+        [OperationContract]
+        [WebGet(
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = @"AddPlace?id={id}&name={name}&address={address}&phone={phone}&categoryID={categoryID}")]//&imagePath={imagePath}")]
+        int AddPlace(int id, string name, string address, string phone, int categoryID);//, string imagePath);
+
+        [OperationContract]
+        [WebGet(
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = @"AddCategory?id={id}&name={name}")]//&iconPath={iconPath}")]
+        int AddCategory(int id, string name);//, string iconPath);
+
+        [OperationContract]
+        [WebGet(
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            UriTemplate = @"GetAllCategory")]
+        List<Simple.Category> GetAllCategory();
+
+        [OperationContract]
+        [WebGet(
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            UriTemplate = @"GetAllComments")]
+        List<Simple.CommentList> GetAllComments();
+
+        [OperationContract]
+        [WebGet(
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            UriTemplate = @"GetAllPlace")]
+        List<Simple.Place> GetAllPlace();
+
+        [OperationContract]
+        [WebGet(
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            UriTemplate = @"GetAllUsers")]
+        List<Simple.User> GetAllUsers();
+
+        /*[OperationContract]
+        [WebGet(
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            UriTemplate = @"DeleteComment?id={id}")]
+        bool DeleteComment(int id);*/
+
+        [OperationContract]
+        [WebGet(
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            UriTemplate = @"GetUsersName?id={id}")]
+        Simple.User GetUsersName(int id);
+    }
+}
